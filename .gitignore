@@ -1,0 +1,37 @@
+# Entorno Virtual
+.venv/
+venv/
+ENV/
+
+# Archivos compilados de Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Archivos de base de datos
+*.sqlite3
+db.sqlite3
+
+# Logs
+*.log
+
+# Archivos de configuración local (ejemplos, considera tus necesidades específicas)
+local_settings.py
+.env
+
+# Archivos del sistema operativo
+.DS_Store
+Thumbs.db
+
+# Archivos de IDEs
+.idea/
+.vscode/
+
+# Archivos de Django
+*.mo
+*.pot
+
+# Archivos estáticos y de medios generados (si no quieres versionarlos)
+#staticfiles/
+#media/ 
