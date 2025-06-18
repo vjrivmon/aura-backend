@@ -92,3 +92,29 @@ class KnownPerson(models.Model):
         return f"{self.name} (Conocido de {self.user.username})"
 
 # Test comment to trigger change detection
+
+class UserProfile(models.Model):
+    """
+    Perfil extendido para el modelo de Usuario de Django.
+    Añade campos específicos para la aplicación.
+    """
+    user = models.OneToOneField(
+        User, 
+        on_delete=models.CASCADE,
+        related_name="profile",
+        verbose_name="Usuario"
+    )
+    is_visually_impaired = models.BooleanField(
+        default=False,
+        verbose_name="¿Es Discapacitado Visual?",
+        help_text="Indica si el usuario tiene discapacidad visual."
+    )
+    created_at = models.DateTimeField(auto_now_add=True, verbose_name="Fecha de Creación")
+    updated_at = models.DateTimeField(auto_now=True, verbose_name="Última Actualización")
+
+    class Meta:
+        verbose_name = "Perfil de Usuario"
+        verbose_name_plural = "Perfiles de Usuario"
+
+    def __str__(self):
+        return f"Perfil de {self.user.username}"
